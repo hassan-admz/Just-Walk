@@ -11,7 +11,7 @@
 		4A2293AA8ABA8706B2B5D138 /* Pods_Just_Walk_Just_WalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2689C06619A88538ECD560 /* Pods_Just_Walk_Just_WalkUITests.framework */; };
 		CE979AA02B410AF90046024C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979A9F2B410AF90046024C /* AppDelegate.swift */; };
 		CE979AA22B410AF90046024C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA12B410AF90046024C /* SceneDelegate.swift */; };
-		CE979AA42B410AF90046024C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA32B410AF90046024C /* ViewController.swift */; };
+		CE979AA42B410AF90046024C /* MainTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA32B410AF90046024C /* MainTabBarVC.swift */; };
 		CE979AAA2B410AF90046024C /* Just_Walk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA82B410AF90046024C /* Just_Walk.xcdatamodeld */; };
 		CE979AAC2B410AFB0046024C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE979AAB2B410AFB0046024C /* Assets.xcassets */; };
 		CE979AAF2B410AFB0046024C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE979AAD2B410AFB0046024C /* LaunchScreen.storyboard */; };
@@ -19,6 +19,9 @@
 		CE979AC42B410AFC0046024C /* Just_WalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AC32B410AFC0046024C /* Just_WalkUITests.swift */; };
 		CE979AC62B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AC52B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift */; };
 		CE979AD92B41106A0046024C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE979AD82B41106A0046024C /* GoogleService-Info.plist */; };
+		CE979ADB2B4111EF0046024C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADA2B4111EF0046024C /* HomeVC.swift */; };
+		CE979ADD2B4112020046024C /* SavedPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADC2B4112020046024C /* SavedPlacesVC.swift */; };
+		CE979ADF2B41128F0046024C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */; };
 		FAA74584B51C197ACBA46294 /* Pods_Just_Walk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C888F01C7523DCB07605EB /* Pods_Just_Walk.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +53,7 @@
 		CE979A9C2B410AF90046024C /* Just Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Walk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE979A9F2B410AF90046024C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE979AA12B410AF90046024C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE979AA32B410AF90046024C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE979AA32B410AF90046024C /* MainTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarVC.swift; sourceTree = "<group>"; };
 		CE979AA92B410AF90046024C /* Just_Walk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Just_Walk.xcdatamodel; sourceTree = "<group>"; };
 		CE979AAB2B410AFB0046024C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE979AAE2B410AFB0046024C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		CE979AC32B410AFC0046024C /* Just_WalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_WalkUITests.swift; sourceTree = "<group>"; };
 		CE979AC52B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_WalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CE979AD82B41106A0046024C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE979ADA2B4111EF0046024C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		CE979ADC2B4112020046024C /* SavedPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesVC.swift; sourceTree = "<group>"; };
+		CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		E093B22C53BD7937276CB081 /* Pods-Just Walk-Just WalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5E53F3FE78DFE28B897A5DC /* Pods-Just Walk-Just WalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.release.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,7 +155,9 @@
 		CE979AD22B410D2E0046024C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE979AA32B410AF90046024C /* ViewController.swift */,
+				CE979AA32B410AF90046024C /* MainTabBarVC.swift */,
+				CE979ADA2B4111EF0046024C /* HomeVC.swift */,
+				CE979ADC2B4112020046024C /* SavedPlacesVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +165,7 @@
 		CE979AD32B410D3B0046024C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,7 +450,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE979AA42B410AF90046024C /* ViewController.swift in Sources */,
+				CE979AA42B410AF90046024C /* MainTabBarVC.swift in Sources */,
+				CE979ADF2B41128F0046024C /* CustomCollectionViewCell.swift in Sources */,
+				CE979ADB2B4111EF0046024C /* HomeVC.swift in Sources */,
+				CE979ADD2B4112020046024C /* SavedPlacesVC.swift in Sources */,
 				CE979AA02B410AF90046024C /* AppDelegate.swift in Sources */,
 				CE979AAA2B410AF90046024C /* Just_Walk.xcdatamodeld in Sources */,
 				CE979AA22B410AF90046024C /* SceneDelegate.swift in Sources */,
