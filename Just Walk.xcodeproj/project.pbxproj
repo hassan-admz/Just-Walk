@@ -22,6 +22,8 @@
 		CE979ADB2B4111EF0046024C /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADA2B4111EF0046024C /* HomeVC.swift */; };
 		CE979ADD2B4112020046024C /* SavedPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADC2B4112020046024C /* SavedPlacesVC.swift */; };
 		CE979ADF2B41128F0046024C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */; };
+		CE979AE22B41A0DB0046024C /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AE12B41A0DB0046024C /* DatabaseService.swift */; };
+		CE979AE52B41A24E0046024C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AE42B41A24E0046024C /* Place.swift */; };
 		FAA74584B51C197ACBA46294 /* Pods_Just_Walk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C888F01C7523DCB07605EB /* Pods_Just_Walk.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		CE979ADA2B4111EF0046024C /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		CE979ADC2B4112020046024C /* SavedPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesVC.swift; sourceTree = "<group>"; };
 		CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE979AE12B41A0DB0046024C /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		CE979AE42B41A24E0046024C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		E093B22C53BD7937276CB081 /* Pods-Just Walk-Just WalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5E53F3FE78DFE28B897A5DC /* Pods-Just Walk-Just WalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.release.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,6 +128,8 @@
 		CE979A9E2B410AF90046024C /* Just Walk */ = {
 			isa = PBXGroup;
 			children = (
+				CE979AE32B41A23A0046024C /* Models */,
+				CE979AE02B41A0B60046024C /* Services */,
 				CE979AD52B410D680046024C /* Supporting */,
 				CE979AD42B410D450046024C /* Resources */,
 				CE979AD32B410D3B0046024C /* Views */,
@@ -186,6 +192,22 @@
 				CE979AA12B410AF90046024C /* SceneDelegate.swift */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		CE979AE02B41A0B60046024C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AE12B41A0DB0046024C /* DatabaseService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		CE979AE32B41A23A0046024C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AE42B41A24E0046024C /* Place.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D613F4FDF15F96AD29079F59 /* Frameworks */ = {
@@ -456,6 +478,8 @@
 				CE979ADD2B4112020046024C /* SavedPlacesVC.swift in Sources */,
 				CE979AA02B410AF90046024C /* AppDelegate.swift in Sources */,
 				CE979AAA2B410AF90046024C /* Just_Walk.xcdatamodeld in Sources */,
+				CE979AE52B41A24E0046024C /* Place.swift in Sources */,
+				CE979AE22B41A0DB0046024C /* DatabaseService.swift in Sources */,
 				CE979AA22B410AF90046024C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
