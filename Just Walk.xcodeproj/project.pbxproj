@@ -1,0 +1,798 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		136BA675EEA0778A377A2E26 /* Pods_Just_WalkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B59CC703D2F6114F9486B71E /* Pods_Just_WalkTests.framework */; };
+		4A2293AA8ABA8706B2B5D138 /* Pods_Just_Walk_Just_WalkUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2689C06619A88538ECD560 /* Pods_Just_Walk_Just_WalkUITests.framework */; };
+		CE979AA02B410AF90046024C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979A9F2B410AF90046024C /* AppDelegate.swift */; };
+		CE979AA22B410AF90046024C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA12B410AF90046024C /* SceneDelegate.swift */; };
+		CE979AA42B410AF90046024C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA32B410AF90046024C /* ViewController.swift */; };
+		CE979AAA2B410AF90046024C /* Just_Walk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE979AA82B410AF90046024C /* Just_Walk.xcdatamodeld */; };
+		CE979AAC2B410AFB0046024C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE979AAB2B410AFB0046024C /* Assets.xcassets */; };
+		CE979AAF2B410AFB0046024C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE979AAD2B410AFB0046024C /* LaunchScreen.storyboard */; };
+		CE979ABA2B410AFC0046024C /* Just_WalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AB92B410AFC0046024C /* Just_WalkTests.swift */; };
+		CE979AC42B410AFC0046024C /* Just_WalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AC32B410AFC0046024C /* Just_WalkUITests.swift */; };
+		CE979AC62B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AC52B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift */; };
+		CE979AD92B41106A0046024C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE979AD82B41106A0046024C /* GoogleService-Info.plist */; };
+		FAA74584B51C197ACBA46294 /* Pods_Just_Walk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C888F01C7523DCB07605EB /* Pods_Just_Walk.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE979AB62B410AFC0046024C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE979A942B410AF90046024C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE979A9B2B410AF90046024C;
+			remoteInfo = "Just Walk";
+		};
+		CE979AC02B410AFC0046024C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE979A942B410AF90046024C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE979A9B2B410AF90046024C;
+			remoteInfo = "Just Walk";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0BBEBCD63085EB487E9EC355 /* Pods-Just WalkTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just WalkTests.debug.xcconfig"; path = "Target Support Files/Pods-Just WalkTests/Pods-Just WalkTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D66A0C73FA851BA759F034A /* Pods-Just Walk.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk.release.xcconfig"; path = "Target Support Files/Pods-Just Walk/Pods-Just Walk.release.xcconfig"; sourceTree = "<group>"; };
+		2607F04CB420434B675817F3 /* Pods-Just WalkTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just WalkTests.release.xcconfig"; path = "Target Support Files/Pods-Just WalkTests/Pods-Just WalkTests.release.xcconfig"; sourceTree = "<group>"; };
+		2C2689C06619A88538ECD560 /* Pods_Just_Walk_Just_WalkUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Just_Walk_Just_WalkUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B04D32C32D4AB063FCE2EF2 /* Pods-Just Walk.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk.debug.xcconfig"; path = "Target Support Files/Pods-Just Walk/Pods-Just Walk.debug.xcconfig"; sourceTree = "<group>"; };
+		B59CC703D2F6114F9486B71E /* Pods_Just_WalkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Just_WalkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C888F01C7523DCB07605EB /* Pods_Just_Walk.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Just_Walk.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE979A9C2B410AF90046024C /* Just Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Walk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE979A9F2B410AF90046024C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE979AA12B410AF90046024C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE979AA32B410AF90046024C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE979AA92B410AF90046024C /* Just_Walk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Just_Walk.xcdatamodel; sourceTree = "<group>"; };
+		CE979AAB2B410AFB0046024C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE979AAE2B410AFB0046024C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE979AB02B410AFB0046024C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE979AB52B410AFC0046024C /* Just WalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just WalkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE979AB92B410AFC0046024C /* Just_WalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_WalkTests.swift; sourceTree = "<group>"; };
+		CE979ABF2B410AFC0046024C /* Just WalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just WalkUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE979AC32B410AFC0046024C /* Just_WalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_WalkUITests.swift; sourceTree = "<group>"; };
+		CE979AC52B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_WalkUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		CE979AD82B41106A0046024C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E093B22C53BD7937276CB081 /* Pods-Just Walk-Just WalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F5E53F3FE78DFE28B897A5DC /* Pods-Just Walk-Just WalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.release.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE979A992B410AF90046024C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA74584B51C197ACBA46294 /* Pods_Just_Walk.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE979AB22B410AFC0046024C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				136BA675EEA0778A377A2E26 /* Pods_Just_WalkTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE979ABC2B410AFC0046024C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A2293AA8ABA8706B2B5D138 /* Pods_Just_Walk_Just_WalkUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE979A932B410AF90046024C = {
+			isa = PBXGroup;
+			children = (
+				CE979A9E2B410AF90046024C /* Just Walk */,
+				CE979AB82B410AFC0046024C /* Just WalkTests */,
+				CE979AC22B410AFC0046024C /* Just WalkUITests */,
+				CE979A9D2B410AF90046024C /* Products */,
+				D6EB8409983087487E3048C4 /* Pods */,
+				D613F4FDF15F96AD29079F59 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE979A9D2B410AF90046024C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE979A9C2B410AF90046024C /* Just Walk.app */,
+				CE979AB52B410AFC0046024C /* Just WalkTests.xctest */,
+				CE979ABF2B410AFC0046024C /* Just WalkUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE979A9E2B410AF90046024C /* Just Walk */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AD52B410D680046024C /* Supporting */,
+				CE979AD42B410D450046024C /* Resources */,
+				CE979AD32B410D3B0046024C /* Views */,
+				CE979AD22B410D2E0046024C /* Controllers */,
+				CE979AB02B410AFB0046024C /* Info.plist */,
+				CE979AD82B41106A0046024C /* GoogleService-Info.plist */,
+				CE979AA82B410AF90046024C /* Just_Walk.xcdatamodeld */,
+			);
+			path = "Just Walk";
+			sourceTree = "<group>";
+		};
+		CE979AB82B410AFC0046024C /* Just WalkTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AB92B410AFC0046024C /* Just_WalkTests.swift */,
+			);
+			path = "Just WalkTests";
+			sourceTree = "<group>";
+		};
+		CE979AC22B410AFC0046024C /* Just WalkUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AC32B410AFC0046024C /* Just_WalkUITests.swift */,
+				CE979AC52B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift */,
+			);
+			path = "Just WalkUITests";
+			sourceTree = "<group>";
+		};
+		CE979AD22B410D2E0046024C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AA32B410AF90046024C /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CE979AD32B410D3B0046024C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE979AD42B410D450046024C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CE979AAB2B410AFB0046024C /* Assets.xcassets */,
+				CE979AAD2B410AFB0046024C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CE979AD52B410D680046024C /* Supporting */ = {
+			isa = PBXGroup;
+			children = (
+				CE979A9F2B410AF90046024C /* AppDelegate.swift */,
+				CE979AA12B410AF90046024C /* SceneDelegate.swift */,
+			);
+			path = Supporting;
+			sourceTree = "<group>";
+		};
+		D613F4FDF15F96AD29079F59 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5C888F01C7523DCB07605EB /* Pods_Just_Walk.framework */,
+				2C2689C06619A88538ECD560 /* Pods_Just_Walk_Just_WalkUITests.framework */,
+				B59CC703D2F6114F9486B71E /* Pods_Just_WalkTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D6EB8409983087487E3048C4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B04D32C32D4AB063FCE2EF2 /* Pods-Just Walk.debug.xcconfig */,
+				0D66A0C73FA851BA759F034A /* Pods-Just Walk.release.xcconfig */,
+				E093B22C53BD7937276CB081 /* Pods-Just Walk-Just WalkUITests.debug.xcconfig */,
+				F5E53F3FE78DFE28B897A5DC /* Pods-Just Walk-Just WalkUITests.release.xcconfig */,
+				0BBEBCD63085EB487E9EC355 /* Pods-Just WalkTests.debug.xcconfig */,
+				2607F04CB420434B675817F3 /* Pods-Just WalkTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE979A9B2B410AF90046024C /* Just Walk */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE979AC92B410AFC0046024C /* Build configuration list for PBXNativeTarget "Just Walk" */;
+			buildPhases = (
+				693FE6280C348F305C6A20DB /* [CP] Check Pods Manifest.lock */,
+				CE979A982B410AF90046024C /* Sources */,
+				CE979A992B410AF90046024C /* Frameworks */,
+				CE979A9A2B410AF90046024C /* Resources */,
+				082B126F173A34A7F155FF35 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Just Walk";
+			productName = "Just Walk";
+			productReference = CE979A9C2B410AF90046024C /* Just Walk.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CE979AB42B410AFC0046024C /* Just WalkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE979ACC2B410AFC0046024C /* Build configuration list for PBXNativeTarget "Just WalkTests" */;
+			buildPhases = (
+				1E2E9AECA91FAE8240BC83E7 /* [CP] Check Pods Manifest.lock */,
+				CE979AB12B410AFC0046024C /* Sources */,
+				CE979AB22B410AFC0046024C /* Frameworks */,
+				CE979AB32B410AFC0046024C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE979AB72B410AFC0046024C /* PBXTargetDependency */,
+			);
+			name = "Just WalkTests";
+			productName = "Just WalkTests";
+			productReference = CE979AB52B410AFC0046024C /* Just WalkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CE979ABE2B410AFC0046024C /* Just WalkUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE979ACF2B410AFC0046024C /* Build configuration list for PBXNativeTarget "Just WalkUITests" */;
+			buildPhases = (
+				F08A455F6BA7E77C23FD4A2A /* [CP] Check Pods Manifest.lock */,
+				CE979ABB2B410AFC0046024C /* Sources */,
+				CE979ABC2B410AFC0046024C /* Frameworks */,
+				CE979ABD2B410AFC0046024C /* Resources */,
+				636232C3BF21B16F5A947473 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE979AC12B410AFC0046024C /* PBXTargetDependency */,
+			);
+			name = "Just WalkUITests";
+			productName = "Just WalkUITests";
+			productReference = CE979ABF2B410AFC0046024C /* Just WalkUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE979A942B410AF90046024C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					CE979A9B2B410AF90046024C = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					CE979AB42B410AFC0046024C = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CE979A9B2B410AF90046024C;
+					};
+					CE979ABE2B410AFC0046024C = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = CE979A9B2B410AF90046024C;
+					};
+				};
+			};
+			buildConfigurationList = CE979A972B410AF90046024C /* Build configuration list for PBXProject "Just Walk" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE979A932B410AF90046024C;
+			productRefGroup = CE979A9D2B410AF90046024C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE979A9B2B410AF90046024C /* Just Walk */,
+				CE979AB42B410AFC0046024C /* Just WalkTests */,
+				CE979ABE2B410AFC0046024C /* Just WalkUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE979A9A2B410AF90046024C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE979AAF2B410AFB0046024C /* LaunchScreen.storyboard in Resources */,
+				CE979AAC2B410AFB0046024C /* Assets.xcassets in Resources */,
+				CE979AD92B41106A0046024C /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE979AB32B410AFC0046024C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE979ABD2B410AFC0046024C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		082B126F173A34A7F155FF35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Just Walk/Pods-Just Walk-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Just Walk/Pods-Just Walk-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Just Walk/Pods-Just Walk-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1E2E9AECA91FAE8240BC83E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Just WalkTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		636232C3BF21B16F5A947473 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		693FE6280C348F305C6A20DB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Just Walk-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F08A455F6BA7E77C23FD4A2A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Just Walk-Just WalkUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE979A982B410AF90046024C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE979AA42B410AF90046024C /* ViewController.swift in Sources */,
+				CE979AA02B410AF90046024C /* AppDelegate.swift in Sources */,
+				CE979AAA2B410AF90046024C /* Just_Walk.xcdatamodeld in Sources */,
+				CE979AA22B410AF90046024C /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE979AB12B410AFC0046024C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE979ABA2B410AFC0046024C /* Just_WalkTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE979ABB2B410AFC0046024C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE979AC42B410AFC0046024C /* Just_WalkUITests.swift in Sources */,
+				CE979AC62B410AFC0046024C /* Just_WalkUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE979AB72B410AFC0046024C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE979A9B2B410AF90046024C /* Just Walk */;
+			targetProxy = CE979AB62B410AFC0046024C /* PBXContainerItemProxy */;
+		};
+		CE979AC12B410AFC0046024C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE979A9B2B410AF90046024C /* Just Walk */;
+			targetProxy = CE979AC02B410AFC0046024C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CE979AAD2B410AFB0046024C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE979AAE2B410AFB0046024C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE979AC72B410AFC0046024C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE979AC82B410AFC0046024C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE979ACA2B410AFC0046024C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B04D32C32D4AB063FCE2EF2 /* Pods-Just Walk.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Just Walk/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mhm-productions.Just-Walk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE979ACB2B410AFC0046024C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D66A0C73FA851BA759F034A /* Pods-Just Walk.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Just Walk/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mhm-productions.Just-Walk";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CE979ACD2B410AFC0046024C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BBEBCD63085EB487E9EC355 /* Pods-Just WalkTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mhm-productions.Just-WalkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Just Walk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Just Walk";
+			};
+			name = Debug;
+		};
+		CE979ACE2B410AFC0046024C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2607F04CB420434B675817F3 /* Pods-Just WalkTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mhm-productions.Just-WalkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Just Walk.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Just Walk";
+			};
+			name = Release;
+		};
+		CE979AD02B410AFC0046024C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E093B22C53BD7937276CB081 /* Pods-Just Walk-Just WalkUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mhm-productions.Just-WalkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Just Walk";
+			};
+			name = Debug;
+		};
+		CE979AD12B410AFC0046024C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F5E53F3FE78DFE28B897A5DC /* Pods-Just Walk-Just WalkUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "mhm-productions.Just-WalkUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Just Walk";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE979A972B410AF90046024C /* Build configuration list for PBXProject "Just Walk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE979AC72B410AFC0046024C /* Debug */,
+				CE979AC82B410AFC0046024C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE979AC92B410AFC0046024C /* Build configuration list for PBXNativeTarget "Just Walk" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE979ACA2B410AFC0046024C /* Debug */,
+				CE979ACB2B410AFC0046024C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE979ACC2B410AFC0046024C /* Build configuration list for PBXNativeTarget "Just WalkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE979ACD2B410AFC0046024C /* Debug */,
+				CE979ACE2B410AFC0046024C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE979ACF2B410AFC0046024C /* Build configuration list for PBXNativeTarget "Just WalkUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE979AD02B410AFC0046024C /* Debug */,
+				CE979AD12B410AFC0046024C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CE979AA82B410AF90046024C /* Just_Walk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CE979AA92B410AF90046024C /* Just_Walk.xcdatamodel */,
+			);
+			currentVersion = CE979AA92B410AF90046024C /* Just_Walk.xcdatamodel */;
+			path = Just_Walk.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = CE979A942B410AF90046024C /* Project object */;
+}

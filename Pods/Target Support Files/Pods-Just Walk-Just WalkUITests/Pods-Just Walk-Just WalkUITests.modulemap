@@ -1,0 +1,6 @@
+framework module Pods_Just_Walk_Just_WalkUITests {
+  umbrella header "Pods-Just Walk-Just WalkUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
