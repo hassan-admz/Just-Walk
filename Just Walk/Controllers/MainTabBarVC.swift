@@ -8,10 +8,13 @@
 import UIKit
 
 class MainTabBarVC: UITabBarController {
+    
+    let databaseService = DatabaseService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let vc1 = UINavigationController(rootViewController: HomeVC())
+        let vc1 = UINavigationController(rootViewController: HomeVC(databaseService: databaseService))
         let vc2 = UINavigationController(rootViewController: SavedPlacesVC())
         
         vc1.tabBarItem.image = UIImage(systemName: "house.fill")

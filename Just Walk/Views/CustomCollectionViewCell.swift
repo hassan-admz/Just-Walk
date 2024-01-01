@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CustomCollectionViewCell: UICollectionViewCell {
     static let identifier = "CustomCollectionViewCell"
@@ -27,10 +28,30 @@ class CustomCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     public func configure(with image: UIImage, and text: String) {
         self.myImageView.image = image
         self.titleLabel.text = text
         self.setupUI()
+    }
+    
+    public func configureTitle(with text: String) {
+        self.titleLabel.text = text
+    }
+    
+    public func setImage(with urlString: String) {
+        if let url = URL(string: urlString) {
+            myImageView.sd_setImage(with: url)
+            self.setNeedsLayout()
+        }
     }
     
     private func setupUI() {
