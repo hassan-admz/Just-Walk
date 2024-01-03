@@ -28,6 +28,7 @@
 		CE979AEA2B4244FA0046024C /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AE92B4244FA0046024C /* PlacesVC.swift */; };
 		CE979AEC2B4248030046024C /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AEB2B4248030046024C /* RegionView.swift */; };
 		CE979AEE2B4297600046024C /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AED2B4297600046024C /* ImageURL.swift */; };
+		CE979AF02B4443170046024C /* SavedPlacesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AEF2B4443170046024C /* SavedPlacesTableViewCell.swift */; };
 		FAA74584B51C197ACBA46294 /* Pods_Just_Walk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5C888F01C7523DCB07605EB /* Pods_Just_Walk.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 		CE979AE92B4244FA0046024C /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		CE979AEB2B4248030046024C /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		CE979AED2B4297600046024C /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
+		CE979AEF2B4443170046024C /* SavedPlacesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesTableViewCell.swift; sourceTree = "<group>"; };
 		E093B22C53BD7937276CB081 /* Pods-Just Walk-Just WalkUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.debug.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F5E53F3FE78DFE28B897A5DC /* Pods-Just Walk-Just WalkUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Just Walk-Just WalkUITests.release.xcconfig"; path = "Target Support Files/Pods-Just Walk-Just WalkUITests/Pods-Just Walk-Just WalkUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,6 +185,7 @@
 			children = (
 				CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */,
 				CE979AEB2B4248030046024C /* RegionView.swift */,
+				CE979AEF2B4443170046024C /* SavedPlacesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				CE979AEA2B4244FA0046024C /* PlacesVC.swift in Sources */,
 				CE979AE52B41A24E0046024C /* Place.swift in Sources */,
 				CE979AEE2B4297600046024C /* ImageURL.swift in Sources */,
+				CE979AF02B4443170046024C /* SavedPlacesTableViewCell.swift in Sources */,
 				CE979AE22B41A0DB0046024C /* DatabaseService.swift in Sources */,
 				CE979AA22B410AF90046024C /* SceneDelegate.swift in Sources */,
 			);

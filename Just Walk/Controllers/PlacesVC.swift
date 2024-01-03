@@ -14,16 +14,16 @@ class PlacesVC: UIViewController {
     var places = [Place]()
     var currentPlace: Place?
     
-    var databaseService: DatabaseServiceProtocol?
-    
-    init(databaseService: DatabaseServiceProtocol) {
-        self.databaseService = databaseService
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    var databaseService: DatabaseServiceProtocol?
+//    
+//    init(databaseService: DatabaseServiceProtocol) {
+//        self.databaseService = databaseService
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     // MARK: - Lifecycle
     
@@ -58,7 +58,7 @@ class PlacesVC: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
-        label.text = "Singapore"
+        label.text = ""
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 22, weight: .bold)
         return label
@@ -71,7 +71,7 @@ class PlacesVC: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Directions"
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 16, weight: .regular)
+        label.font = .systemFont(ofSize: 18, weight: .regular)
         return label
     }()
     
@@ -85,6 +85,17 @@ class PlacesVC: UIViewController {
         btn.layer.cornerRadius = 10
         return btn
     }()
+    var isTapped = false
+    private lazy var likeImage: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.image = UIImage(systemName: "heart")
+        iv.tintColor = .gray
+        iv.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapLike))
+        iv.addGestureRecognizer(gesture)
+        return iv
+    }()
     
     private func addViews() {
         view.addSubview(placeImageView)
@@ -92,6 +103,7 @@ class PlacesVC: UIViewController {
         view.addSubview(regionView)
         view.addSubview(directionsLabel)
         view.addSubview(nextButton)
+        view.addSubview(likeImage)
     }
     
     private func setupUIConstraints() {
@@ -106,7 +118,7 @@ class PlacesVC: UIViewController {
             placeNameLabel.widthAnchor.constraint(equalToConstant: 350),
             placeNameLabel.heightAnchor.constraint(equalToConstant: 54),
             
-            regionView.topAnchor.constraint(equalTo: placeNameLabel.bottomAnchor, constant: 6),
+            regionView.topAnchor.constraint(equalTo: placeNameLabel.bottomAnchor, constant: 0),
             regionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             regionView.heightAnchor.constraint(equalToConstant: 48),
             
@@ -118,8 +130,13 @@ class PlacesVC: UIViewController {
             nextButton.topAnchor.constraint(equalTo: directionsLabel.bottomAnchor, constant: 24),
             nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             nextButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 32),
-            nextButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
-            nextButton.heightAnchor.constraint(equalToConstant: 48)
+            nextButton.trailingAnchor.constraint(equalTo: likeImage.leadingAnchor, constant: -12),
+            nextButton.heightAnchor.constraint(equalToConstant: 48),
+            
+            likeImage.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -32),
+            likeImage.centerYAnchor.constraint(equalTo: nextButton.centerYAnchor),
+            likeImage.heightAnchor.constraint(equalToConstant: 38),
+            likeImage.widthAnchor.constraint(equalToConstant: 38)
         ])
     }
     
@@ -159,34 +176,20 @@ class PlacesVC: UIViewController {
             }
         }
     }
+    // MARK: - Functions
     
-    private func fetchPlaces() {
+    private func savePlaceToUserDefaults(place: Place) {
+        var savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
         
-        databaseService?.fetchPlaces { [weak self] result in
-            guard let strongSelf = self else { return }
-            switch result {
-            case .success(let success):
-                strongSelf.places = success
-            case .failure(let failure):
-                print("error")
-                print(failure.localizedDescription)
-            }
-        }
-    }
-    
-    private func updateCurrentPlaceFor(currentPlace: Place) {
+        let placeData: [String: Any] = [
+            "name": place.name,
+            "imageURL": place.imageURL
+        ]
         
-        // Image
-        let urlString = currentPlace.imageURL
-        let url = URL(string: urlString)
-        placeImageView.sd_setImage(with: url)
-        
-        // Name
-        placeNameLabel.text = currentPlace.name
-        
-        // Region
-        
-        
+        savedPlaces.append(placeData)
+        UserDefaults.standard.set(savedPlaces, forKey: "SavedPlaces")
+        UserDefaults.standard.synchronize()
+        print("SavedPlaces is \(savedPlaces) & place data is \(placeData)")
     }
     
     // MARK: - Selectors
@@ -212,12 +215,21 @@ class PlacesVC: UIViewController {
                 }
             }.resume()
         }
+    }
+    
+    @objc func didTapLike() {
         
-//        if !places.isEmpty {
-//            self.currentPlace = places.randomElement()
-//            guard let currentPlace = currentPlace else { return }
-//            updateCurrentPlaceFor(currentPlace: currentPlace)
-//        }
+        if isTapped {
+            likeImage.image = UIImage(systemName: "heart")
+            likeImage.tintColor = .gray
+        } else {
+            likeImage.image = UIImage(systemName: "heart.fill")
+            likeImage.tintColor = .red
+            let currentPlace = placesForSelectedRegion[currentIndex]
+            savePlaceToUserDefaults(place: currentPlace)
+        }
+//        isTapped = !isTapped
+        print("tapped like!! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(placesForSelectedRegion[currentIndex].name)")
     }
     
     @objc func didTapImage() {

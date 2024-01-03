@@ -43,7 +43,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         self.setupUI()
     }
     
-    public func configureTitle(with text: String) {
+    public func setTitle(with text: String) {
         self.titleLabel.text = text
     }
     

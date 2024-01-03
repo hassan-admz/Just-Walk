@@ -10,16 +10,16 @@ import SDWebImage
 
 class HomeVC: UIViewController {
     
-    var databaseService: DatabaseServiceProtocol?
-    
-    init(databaseService: DatabaseServiceProtocol) {
-        self.databaseService = databaseService
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+//    var databaseService: DatabaseServiceProtocol?
+//    
+//    init(databaseService: DatabaseServiceProtocol) {
+//        self.databaseService = databaseService
+//        super.init(nibName: nil, bundle: nil)
+//    }
+//    
+//    required init?(coder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
     
     // MARK: - Lifecycle
 
@@ -98,19 +98,19 @@ class HomeVC: UIViewController {
     
     // MARK: - Actions
     
-    func fetchPlaces() {
-        
-        databaseService?.fetchPlaces { result in
-            switch result {
-            case .success(let success):
-                print("success")
-                print(success)
-            case .failure(let failure):
-                print("error")
-                print(failure.localizedDescription)
-            }
-        }
-    }
+//    func fetchPlaces() {
+//
+//        databaseService?.fetchPlaces { result in
+//            switch result {
+//            case .success(let success):
+//                print("success")
+//                print(success)
+//            case .failure(let failure):
+//                print("error")
+//                print(failure.localizedDescription)
+//            }
+//        }
+//    }
 }
 
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -125,26 +125,27 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
         }
         
         let titleText = self.titleText[indexPath.row]
-        cell.configureTitle(with: titleText)
-
+        cell.setTitle(with: titleText)
+        
         // Fetch image asynchronously and display in the cell
-              if let imageURL = URL(string: imageURLs[indexPath.item]) {
-                  URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
-                      if let data = data, let image = UIImage(data: data) {
-                          DispatchQueue.main.async {
-                              cell.setImage(with: self.imageURLs[indexPath.item])
-                          }
-                      }
-                  }.resume()
-              }
+        if let imageURL = URL(string: imageURLs[indexPath.item]) {
+            URLSession.shared.dataTask(with: imageURL) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        cell.setImage(with: self.imageURLs[indexPath.item])
+                    }
+                }
+            }.resume()
+        }
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let cell = collectionView.cellForItem(at: indexPath) else {return}
-        let databaseService = DatabaseService()
-        let destinationVC = PlacesVC(databaseService: databaseService)
+//        let databaseService = DatabaseService()
+        // databaseService: databaseService
+        let destinationVC = PlacesVC()
         let selectedRegion = regions[indexPath.item]
         destinationVC.selectedRegion = selectedRegion
         navigationController?.pushViewController(destinationVC, animated: true)
