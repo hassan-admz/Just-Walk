@@ -3,35 +3,40 @@
 //  Just Walk
 //
 //  Created by user on 1/1/24.
-//
 
 import UIKit
 import SDWebImage
 import FirebaseFirestore
 
+
 class PlacesVC: UIViewController {
-    
+        
     var places = [Place]()
     var currentPlace: Place?
     
-//    var databaseService: DatabaseServiceProtocol?
-//    
-//    init(databaseService: DatabaseServiceProtocol) {
-//        self.databaseService = databaseService
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
+    convenience init(place: Place, currentIndex: Int) {
+        self.init()
+        self.currentIndex = currentIndex
+//        self.isLiked = isLiked
+        fetchPlacesForRegionSelected()
+        updateUI(with: place, currentIndex: currentIndex)
+    }
+        
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        fetchPlacesForSelectedRegion()
+        fetchPlacesForRegionSelected()
+        print("The current index is: \(currentIndex)")
+        print("Is tapped is currently: \(isTapped)")
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        configureUI()
+//        fetchPlacesForRegionSelected()
+//    }
     
     // MARK: - UI Components
     
@@ -86,6 +91,7 @@ class PlacesVC: UIViewController {
         return btn
     }()
     var isTapped = false
+    var isLiked = false
     private lazy var likeImage: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -145,94 +151,176 @@ class PlacesVC: UIViewController {
     var placesForSelectedRegion: [Place] = []
     var currentIndex: Int = 0
     
-    private func fetchPlacesForSelectedRegion() {
-        let db = Firestore.firestore()
-        db.collection("places").whereField("region", isEqualTo: selectedRegion).getDocuments { [weak self](querySnapshot, error) in
+    private func fetchPlacesForRegionSelected() {
+        FirebaseServices.fetchPlaces(for: selectedRegion) { [weak self] place in
             guard let strongSelf = self else { return }
-            if let error = error {
-                print("Error fetching places for selected region: \(error.localizedDescription)")
-            } else {
-                for document in querySnapshot!.documents {
-                    let data = document.data()
-                    let imageURL = data["imageURL"] as? String ?? ""
-                    let name = data["name"] as? String ?? ""
-                    let region = data["region"] as? String ?? ""
-                    let docID = data["docID"] as? String ?? ""
-                    let place = Place(name: name, region: strongSelf.selectedRegion, imageURL: imageURL, docID: docID)
-                    strongSelf.placesForSelectedRegion.append(place)
-                    // Process fetched data (e.g., display in UIImageView and UILabels)
-                    if let url = URL(string: imageURL) {
-                        URLSession.shared.dataTask(with: url) { (data, _, _) in
-                            if let data = data {
-                                DispatchQueue.main.async {
-                                    strongSelf.placeImageView.image = UIImage(data: data)
-                                }
-                            }
-                        }.resume()
-                    }
-                    strongSelf.placeNameLabel.text = name
-                    strongSelf.regionView.setFor(region: region)
-                }
+            strongSelf.places = place
+            self?.placesForSelectedRegion = place
+            if strongSelf.currentIndex < place.count {
+                let currentPlace = place[strongSelf.currentIndex]
+                strongSelf.updateUI(with: currentPlace, currentIndex: strongSelf.currentIndex)
             }
         }
     }
-    // MARK: - Functions
     
-    private func savePlaceToUserDefaults(place: Place) {
-        var savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
-        
-        let placeData: [String: Any] = [
-            "name": place.name,
-            "imageURL": place.imageURL
-        ]
-        
-        savedPlaces.append(placeData)
-        UserDefaults.standard.set(savedPlaces, forKey: "SavedPlaces")
-        UserDefaults.standard.synchronize()
-        print("SavedPlaces is \(savedPlaces) & place data is \(placeData)")
-    }
-    
-    // MARK: - Selectors
-    
-    @objc func didTapNext() {
-        guard !placesForSelectedRegion.isEmpty else {
-            placeImageView.image = UIImage(systemName: "questionmark")
-            placeNameLabel.text = "No places available"
-            return
-        }
-        // Logic to display the next place
-        currentIndex = (currentIndex + 1) % placesForSelectedRegion.count
-        let nextPlace = placesForSelectedRegion[currentIndex]
-        
-        // Update UI based on nextPlace's data
-        if let url = URL(string: nextPlace.imageURL) {
+    public func updateUI(with place: Place, currentIndex: Int) {
+        self.currentIndex = currentIndex
+        placeNameLabel.text = place.name
+        regionView.setFor(region: place.region)
+        if let url = URL(string: place.imageURL) {
             URLSession.shared.dataTask(with: url) { [weak self] (data, _, _) in
-                guard let self = self, let data = data else { return }
+                guard let imageData = data, let image = UIImage(data: imageData) else { return }
+
                 DispatchQueue.main.async {
-                    self.placeImageView.image = UIImage(data: data)
-                    self.placeNameLabel.text = nextPlace.name
-                    self.regionView.setFor(region: nextPlace.region)
+                    self?.placeImageView.image = image
+                    self?.updateLikeImageColor()
                 }
             }.resume()
         }
     }
-    
-    @objc func didTapLike() {
+
+    // MARK: - Functions
+
+    private func savePlaceToUserDefaults(place: Place, currentIndex: Int, isTapped: Bool) {
+        var savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
         
-        if isTapped {
-            likeImage.image = UIImage(systemName: "heart")
-            likeImage.tintColor = .gray
+        let placeData: [String: Any] = [
+            "name": place.name,
+            "imageURL": place.imageURL,
+            "region": place.region,
+            "docID": place.docID,
+            "currentIndex": currentIndex,
+            "isTapped": isTapped
+        ]
+        
+        // Check if the place is already saved
+        let isAlreadySaved = savedPlaces.contains { savedPlace in
+            guard let docID = savedPlace["docID"] as? String else { return false }
+            return docID == place.docID
+        }
+        
+        if !isAlreadySaved {
+            savedPlaces.append(placeData)
+            UserDefaults.standard.set(savedPlaces, forKey: "SavedPlaces")
+            UserDefaults.standard.synchronize()
+            print("SavedPlaces is \(savedPlaces) & place data is \(placeData)")
         } else {
+            print("Place is already saved")
+        }
+    }
+    
+    private func removePlaceFromSavedPlaces() {
+        var savedPlaces: [[String: Any]] = []
+        savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
+//        savedPlaces.remove(at: currentIndex)
+//        UserDefaults.standard.set(savedPlaces, forKey: "SavedPlaces")
+        print("Current Index is: \(currentIndex)")
+    }
+    
+    private func removePlaceFromUserDefaults(place: Place) {
+        var savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
+
+        // Find the index of the place to be removed
+        if let index = savedPlaces.firstIndex(where: {
+            ($0["docID"] as? String) == place.docID
+        }) {
+            savedPlaces.remove(at: index)
+            UserDefaults.standard.set(savedPlaces, forKey: "SavedPlaces")
+            UserDefaults.standard.synchronize()
+            print("Removed place. Updated SavedPlaces is \(savedPlaces)")
+            print("CURRENT IS TAPPED IS NOW: \(isTapped)")
+        } else {
+            print("Place not found in SavedPlaces")
+        }
+    }
+    
+    private func updateLikeImageColor() {
+        let currentPlace = placesForSelectedRegion[currentIndex]
+        let savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
+        
+        // Check if the current place is already saved
+        let isAlreadySaved = savedPlaces.contains { savedPlace in
+            guard let docID = savedPlace["docID"] as? String else { return false }
+            return docID == currentPlace.docID
+        }
+        
+        if isAlreadySaved {
             likeImage.image = UIImage(systemName: "heart.fill")
             likeImage.tintColor = .red
-            let currentPlace = placesForSelectedRegion[currentIndex]
-            savePlaceToUserDefaults(place: currentPlace)
+        } else {
+            likeImage.image = UIImage(systemName: "heart")
+            likeImage.tintColor = .gray
         }
-//        isTapped = !isTapped
-        print("tapped like!! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(placesForSelectedRegion[currentIndex].name)")
     }
+
+    // MARK: - Selectors
+
+    @objc func didTapNext() {
+        // Logic to display the next place
+        currentIndex += 1
+        if currentIndex >= placesForSelectedRegion.count {
+            currentIndex = 0
+        }
+        fetchPlacesForRegionSelected()
+    }
+    
+    @objc func didTapLike() {
+        let currentPlace = placesForSelectedRegion[currentIndex]
+
+        // Retrieve saved places
+        let savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
+
+        // Check if the current place is already saved
+        let isAlreadySaved = savedPlaces.contains { savedPlace in
+            guard let docID = savedPlace["docID"] as? String else { return false }
+            return docID == currentPlace.docID
+        }
+        
+//        let isAlreadySaved = savedPlaces.contains { savedPlace in
+//            guard let currentIndex = savedPlace["currentIndex"] as? String else { return false }
+//            return currentIndex == currentIndex
+//        }
+        isTapped = !isTapped
+        if isAlreadySaved {
+            // Place is already saved, so remove it
+            removePlaceFromUserDefaults(place: currentPlace)
+            likeImage.image = UIImage(systemName: "heart")
+            likeImage.tintColor = .gray
+            isTapped = false
+            print("isTapped is now: \(isTapped)")
+        } else {
+            // Place is not saved, so save it
+            savePlaceToUserDefaults(place: currentPlace, currentIndex: currentIndex, isTapped: isTapped)
+            likeImage.image = UIImage(systemName: "heart.fill")
+            likeImage.tintColor = .red
+            isTapped = true
+            print("isTapped is now: \(isTapped)")
+        }
+//        print("Tapped like! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(currentPlace.name)")
+    }
+
+//    @objc func didTapLike() {
+//
+//        if isTapped {
+//            likeImage.image = UIImage(systemName: "heart")
+//            likeImage.tintColor = .gray
+//            removePlaceFromSavedPlaces()
+//            let currentPlace = placesForSelectedRegion[currentIndex]
+//            removePlaceFromUserDefaults(place: currentPlace)
+//        } else {
+//            likeImage.image = UIImage(systemName: "heart.fill")
+//            likeImage.tintColor = .red
+//
+//
+//            let currentPlace = placesForSelectedRegion[currentIndex]
+//            savePlaceToUserDefaults(place: currentPlace, currentIndex: currentIndex)
+//        }
+//        isTapped = !isTapped
+//        print("tapped like!! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(placesForSelectedRegion[currentIndex].name)")
+//    }
     
     @objc func didTapImage() {
         print("image tapped")
     }
 }
+

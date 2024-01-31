@@ -10,23 +10,11 @@ import SDWebImage
 
 class HomeVC: UIViewController {
     
-//    var databaseService: DatabaseServiceProtocol?
-//    
-//    init(databaseService: DatabaseServiceProtocol) {
-//        self.databaseService = databaseService
-//        super.init(nibName: nil, bundle: nil)
-//    }
-//    
-//    required init?(coder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-       
     }
     
     // MARK: - Data for Collection View Cells
@@ -95,22 +83,6 @@ class HomeVC: UIViewController {
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         return collectionView
     }()
-    
-    // MARK: - Actions
-    
-//    func fetchPlaces() {
-//
-//        databaseService?.fetchPlaces { result in
-//            switch result {
-//            case .success(let success):
-//                print("success")
-//                print(success)
-//            case .failure(let failure):
-//                print("error")
-//                print(failure.localizedDescription)
-//            }
-//        }
-//    }
 }
 
 extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
@@ -142,9 +114,8 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let cell = collectionView.cellForItem(at: indexPath) else {return}
-//        let databaseService = DatabaseService()
-        // databaseService: databaseService
+        guard let cell = collectionView.cellForItem(at: indexPath) else { return }
+
         let destinationVC = PlacesVC()
         let selectedRegion = regions[indexPath.item]
         destinationVC.selectedRegion = selectedRegion
