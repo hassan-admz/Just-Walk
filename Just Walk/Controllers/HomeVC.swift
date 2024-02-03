@@ -2,7 +2,7 @@
 //  HomeVC.swift
 //  Just Walk
 //
-//  Created by user on 31/12/23.
+//  Created by Hassan Mayers on 31/12/23.
 //
 
 import UIKit
@@ -109,7 +109,6 @@ extension HomeVC: UICollectionViewDataSource, UICollectionViewDelegate {
                 }
             }.resume()
         }
-        
         return cell
     }
     
@@ -135,9 +134,4 @@ extension HomeVC: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 40
     }
-    
-    // Horizontal Spcing
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 10
-//    }
 }

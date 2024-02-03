@@ -2,7 +2,7 @@
 //  FirebaseServices.swift
 //  Just Walk
 //
-//  Created by user on 11/1/24.
+//  Created by Hassan Mayers on 11/1/24.
 //
 
 import Foundation

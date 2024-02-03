@@ -2,7 +2,7 @@
 //  CustomCollectionViewCell.swift
 //  Just Walk
 //
-//  Created by user on 31/12/23.
+//  Created by Hassan Mayers on 31/12/23.
 //
 
 import UIKit

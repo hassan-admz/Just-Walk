@@ -2,7 +2,7 @@
 //  SavedPlacesTableViewCell.swift
 //  Just Walk
 //
-//  Created by user on 2/1/24.
+//  Created by Hassan Mayers on 2/1/24.
 //
 
 import UIKit

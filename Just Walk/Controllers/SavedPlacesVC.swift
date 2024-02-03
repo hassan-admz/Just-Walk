@@ -2,7 +2,7 @@
 //  SavedPlacesVC.swift
 //  Just Walk
 //
-//  Created by user on 31/12/23.
+//  Created by Hassan Mayers on 31/12/23.
 //
 
 import UIKit
@@ -10,8 +10,6 @@ import FirebaseFirestore
 import SDWebImage
 
 class SavedPlacesVC: UIViewController {
-        
-//    weak var delegate: SavedPlacesDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +24,6 @@ class SavedPlacesVC: UIViewController {
     // MARK: - UI Components
     
     var savedPlaces: [[String: Any]] = []
-//    var placesVC = PlacesVC()
     
     private func configureUI() {
         view.backgroundColor = .systemBackground
@@ -84,26 +81,15 @@ extension SavedPlacesVC: UITableViewDelegate, UITableViewDataSource, PlacesVCDel
         guard let currentIndex = savedPlaces[indexPath.row]["currentIndex"] as? Int else {
             return
         }
-//        let placeData = savedPlaces[indexPath.row]
-//        guard let savedPlace = Place(dictionary: placeData) else { return }
-    
-//        let placesVC = PlacesVC(place: selectedPlace, currentIndex: currentIndex)
+        
         let destinationVC = PlacesVC()
         destinationVC.delegate = self
         let selectedRegion = savedPlaces[indexPath.row]["region"] as! String
         destinationVC.currentIndex = currentIndex
         destinationVC.selectedRegion = selectedRegion
-//        destinationVC.updateUI(with: savedPlace, currentIndex: currentIndex)
+
         let nav = UINavigationController(rootViewController: destinationVC)
         present(nav, animated: true)
-        
-
-//        Check if the tabBarController exists and then change the selected index
-//        if let tabBarController = self.tabBarController {
-//            tabBarController.selectedIndex = 0
-//
-//            self.tabBarController?.navigationController?.pushViewController(destinationVC, animated: true)
-//        }
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {

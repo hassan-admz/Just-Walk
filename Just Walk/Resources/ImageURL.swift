@@ -2,7 +2,7 @@
 //  ImageURL.swift
 //  Just Walk
 //
-//  Created by user on 1/1/24.
+//  Created by Hassan Mayers on 1/1/24.
 //
 
 import Foundation

@@ -2,10 +2,11 @@
 //  PlacesVC.swift
 //  Just Walk
 //
-//  Created by user on 1/1/24.
+//  Created by Hassan Mayers on 1/1/24.
 
 import UIKit
 import SDWebImage
+import SafariServices
 import FirebaseFirestore
 
 protocol PlacesVCDelegate: AnyObject {
@@ -22,7 +23,6 @@ class PlacesVC: UIViewController {
     convenience init(place: Place, currentIndex: Int) {
         self.init()
         self.currentIndex = currentIndex
-//        self.isLiked = isLiked
         fetchPlacesForRegionSelected()
         updateUI(with: place, currentIndex: currentIndex)
     }
@@ -50,15 +50,24 @@ class PlacesVC: UIViewController {
         navigationController?.navigationBar.tintColor = .black
         addViews()
         setupUIConstraints()
+        
+        //Gesture for placeImageView (image of the place being viewed)
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
+        placeImageView.addGestureRecognizer(gesture)
+        
+        // Gseture for directions label
+        let directionsTapGesture = UITapGestureRecognizer(target: self, action: #selector(directionsLabelTapped))
+        directionsLabel.addGestureRecognizer(directionsTapGesture)
     }
     
-    private let placeImageView: UIImageView = {
+    private lazy var placeImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
         iv.clipsToBounds = true
         iv.layer.cornerRadius = 10
         iv.image = UIImage(named: "white_square")
+        iv.isUserInteractionEnabled = true
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapImage))
         iv.addGestureRecognizer(gesture)
         return iv
@@ -76,12 +85,15 @@ class PlacesVC: UIViewController {
     
     let regionView = RegionView()
     
-    private let directionsLabel: UILabel = {
+    private lazy var directionsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Directions"
         label.textAlignment = .center
         label.font = .systemFont(ofSize: 18, weight: .regular)
+        label.isUserInteractionEnabled = true
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(directionsLabelTapped))
+        label.addGestureRecognizer(gesture)
         return label
     }()
     
@@ -194,6 +206,8 @@ class PlacesVC: UIViewController {
             "imageURL": place.imageURL,
             "region": place.region,
             "docID": place.docID,
+            "url": place.url,
+            "placeID": place.placeID,
             "currentIndex": currentIndex,
             "isTapped": isTapped
         ]
@@ -217,8 +231,6 @@ class PlacesVC: UIViewController {
     private func removePlaceFromSavedPlaces() {
         var savedPlaces: [[String: Any]] = []
         savedPlaces = UserDefaults.standard.array(forKey: "SavedPlaces") as? [[String: Any]] ?? []
-//        savedPlaces.remove(at: currentIndex)
-//        UserDefaults.standard.set(savedPlaces, forKey: "SavedPlaces")
         print("Current Index is: \(currentIndex)")
     }
     
@@ -256,6 +268,27 @@ class PlacesVC: UIViewController {
             likeImage.image = UIImage(systemName: "heart")
             likeImage.tintColor = .gray
         }
+    }
+    
+    private func openGoogleMaps() {
+        let currentPlace = placesForSelectedRegion[currentIndex]
+        guard let googleMapsAppURL = URL(string: "comgooglemaps://"),
+             let placeURL = createPlaceURL(currentPlace: currentPlace) else {
+            return
+        }
+        
+        if UIApplication.shared.canOpenURL(googleMapsAppURL) {
+            UIApplication.shared.open(placeURL)
+        } else {
+            let safariVC = SFSafariViewController(url: placeURL)
+            present(safariVC, animated: true)
+        }
+    }
+    
+    private func createPlaceURL(currentPlace: Place) -> URL? {
+        let baseURL = "https://www.google.com/maps/search/?api=1&query=''&query_place_id=\(currentPlace.placeID)"
+        guard let url = URL(string: baseURL) else { return nil }
+        return url
     }
 
     // MARK: - Selectors
@@ -302,31 +335,21 @@ class PlacesVC: UIViewController {
             print("isTapped is now: \(isTapped)")
         }
         delegate?.didSaveOrUnsavePlace()
-//        print("Tapped like! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(currentPlace.name)")
     }
-
-//    @objc func didTapLike() {
-//
-//        if isTapped {
-//            likeImage.image = UIImage(systemName: "heart")
-//            likeImage.tintColor = .gray
-//            removePlaceFromSavedPlaces()
-//            let currentPlace = placesForSelectedRegion[currentIndex]
-//            removePlaceFromUserDefaults(place: currentPlace)
-//        } else {
-//            likeImage.image = UIImage(systemName: "heart.fill")
-//            likeImage.tintColor = .red
-//
-//
-//            let currentPlace = placesForSelectedRegion[currentIndex]
-//            savePlaceToUserDefaults(place: currentPlace, currentIndex: currentIndex)
-//        }
-//        isTapped = !isTapped
-//        print("tapped like!! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(placesForSelectedRegion[currentIndex].name)")
-//    }
     
     @objc func didTapImage() {
-        print("image tapped")
+        let currentPlace = placesForSelectedRegion[currentIndex]
+        if let url = URL(string: currentPlace.url) {
+            let safariViewController = SFSafariViewController(url: url)
+            present(safariViewController, animated: true)
+        }
+    }
+    
+    @objc func directionsLabelTapped() {
+        openGoogleMaps()
+        print("DEBUG: Directions label has been tapped!!!!")
+        let currentPlace = placesForSelectedRegion[currentIndex]
+        print("Place ID is:\(currentPlace.placeID)")
     }
 }
 

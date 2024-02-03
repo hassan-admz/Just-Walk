@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Just Walk
 //
-//  Created by user on 31/12/23.
+//  Created by Hassan Mayers on 31/12/23.
 //
 
 import UIKit
@@ -11,8 +11,6 @@ import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
@@ -77,6 +75,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
 

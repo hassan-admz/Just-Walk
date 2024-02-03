@@ -2,15 +2,12 @@
 //  ViewController.swift
 //  Just Walk
 //
-//  Created by user on 31/12/23.
+//  Created by Hassan Mayers on 31/12/23.
 //
 
 import UIKit
 
 class MainTabBarVC: UITabBarController {
-    
-//    let databaseService = DatabaseService()
-    // databaseService: databaseService
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +23,6 @@ class MainTabBarVC: UITabBarController {
         
         setViewControllers([vc1,vc2], animated: true)
         tabBar.tintColor = .label
-        
     }
 }
 

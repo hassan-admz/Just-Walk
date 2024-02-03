@@ -24,7 +24,6 @@
 		CE979ADD2B4112020046024C /* SavedPlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADC2B4112020046024C /* SavedPlacesVC.swift */; };
 		CE979ADF2B41128F0046024C /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */; };
 		CE979AE52B41A24E0046024C /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AE42B41A24E0046024C /* Place.swift */; };
-		CE979AE82B42406F0046024C /* FetchPlaceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AE72B42406F0046024C /* FetchPlaceError.swift */; };
 		CE979AEA2B4244FA0046024C /* PlacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AE92B4244FA0046024C /* PlacesVC.swift */; };
 		CE979AEC2B4248030046024C /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AEB2B4248030046024C /* RegionView.swift */; };
 		CE979AEE2B4297600046024C /* ImageURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE979AED2B4297600046024C /* ImageURL.swift */; };
@@ -76,7 +75,6 @@
 		CE979ADC2B4112020046024C /* SavedPlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlacesVC.swift; sourceTree = "<group>"; };
 		CE979ADE2B41128F0046024C /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE979AE42B41A24E0046024C /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		CE979AE72B42406F0046024C /* FetchPlaceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPlaceError.swift; sourceTree = "<group>"; };
 		CE979AE92B4244FA0046024C /* PlacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesVC.swift; sourceTree = "<group>"; };
 		CE979AEB2B4248030046024C /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
 		CE979AED2B4297600046024C /* ImageURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageURL.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 		CE979A9E2B410AF90046024C /* Just Walk */ = {
 			isa = PBXGroup;
 			children = (
-				CE979AE62B4240530046024C /* Errors */,
 				CE979AE32B41A23A0046024C /* Models */,
 				CE979AE02B41A0B60046024C /* Services */,
 				CE979AD52B410D680046024C /* Supporting */,
@@ -223,14 +220,6 @@
 				CE979AE42B41A24E0046024C /* Place.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		CE979AE62B4240530046024C /* Errors */ = {
-			isa = PBXGroup;
-			children = (
-				CE979AE72B42406F0046024C /* FetchPlaceError.swift */,
-			);
-			path = Errors;
 			sourceTree = "<group>";
 		};
 		D613F4FDF15F96AD29079F59 /* Frameworks */ = {
@@ -498,7 +487,6 @@
 				CE979AA42B410AF90046024C /* MainTabBarVC.swift in Sources */,
 				CE979ADF2B41128F0046024C /* CustomCollectionViewCell.swift in Sources */,
 				CE979ADB2B4111EF0046024C /* HomeVC.swift in Sources */,
-				CE979AE82B42406F0046024C /* FetchPlaceError.swift in Sources */,
 				CE979ADD2B4112020046024C /* SavedPlacesVC.swift in Sources */,
 				CE427B1E2B5016AD003C8B21 /* FirebaseServices.swift in Sources */,
 				CE979AA02B410AF90046024C /* AppDelegate.swift in Sources */,

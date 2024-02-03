@@ -2,13 +2,12 @@
 //  RegionView.swift
 //  Just Walk
 //
-//  Created by user on 1/1/24.
+//  Created by Hassan Mayers on 1/1/24.
 //
 
 import UIKit
 
 class RegionView: UIView {
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
