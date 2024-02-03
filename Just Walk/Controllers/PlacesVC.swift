@@ -8,8 +8,13 @@ import UIKit
 import SDWebImage
 import FirebaseFirestore
 
+protocol PlacesVCDelegate: AnyObject {
+    func didSaveOrUnsavePlace()
+}
 
 class PlacesVC: UIViewController {
+    
+    weak var delegate: PlacesVCDelegate?
         
     var places = [Place]()
     var currentPlace: Place?
@@ -32,11 +37,11 @@ class PlacesVC: UIViewController {
         print("Is tapped is currently: \(isTapped)")
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(animated)
-//        configureUI()
-//        fetchPlacesForRegionSelected()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI()
+        fetchPlacesForRegionSelected()
+    }
     
     // MARK: - UI Components
     
@@ -296,6 +301,7 @@ class PlacesVC: UIViewController {
             isTapped = true
             print("isTapped is now: \(isTapped)")
         }
+        delegate?.didSaveOrUnsavePlace()
 //        print("Tapped like! & selected region is \(selectedRegion) & current index is \(currentIndex) & current place name is \(currentPlace.name)")
     }
 
